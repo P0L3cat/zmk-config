@@ -7,12 +7,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
 / {
         keymap {
                 compatible = "zmk,keymap";
                 #define DEFAULT 0
-                #define LOWER   1
+                #define lower_layer   1
                 #define RAISE   2
 
                default_layer {
@@ -20,12 +22,12 @@
 // |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // | TAB  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  '   | ENT  |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ALT  |
-//                    | GUI |CTRL | SPC |   |     |      | LWR |
+//                    | GUI |CTRL | SPC |   | LWR |      |     |
                         bindings = <
    &kp ESC   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp TAB &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SQT &kp RET
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RALT
-                  &kp LGUI &kp LCTRL &kp SPACE   &trans &trans &lt 1 SPACE
+                  &kp LGUI &kp LCTRL &kp SPACE   &mo 1 &trans &trans
                         >;
                 };
                 lower_layer {
