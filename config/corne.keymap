@@ -13,7 +13,7 @@
                 compatible = "zmk,keymap";
                 #define default_layer 0
                 #define lower_layer   1
-                #define RAISE   2
+                #define raise_layer   2
 
                default_layer {
 // -----------------------------------------------------------------------------------------
